@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نموذج اختبار</title>
+<style>
+    body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #061f46;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #333;
+        direction: rtl;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.8);
+        border: 3px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #061f46;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 2px solid #061f46;
+        border-radius: 8px;
+        background-color: #f9faff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease, transform 0.6s ease;
+    }
+
+    @keyframes borderMove {
+        0% {
+            border-color: #4a90e2;
+        }
+        50% {
+            border-color: #e6f3ff;
+        }
+        100% {
+            border-color: #4a90e2;
+        }
+    }
+
+    .question.animate-border {
+        animation: borderMove 1s ease;
+    }
+
+    .question.animate-3d {
+        transform: perspective(1000px) rotateY(10deg);
+    }
+
+    .question h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .options label {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        margin: 8px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .options label:hover {
+        background: #e6f3ff;
+    }
+
+    .options input {
+        margin-left: 10px;
+        accent-color: #4a90e2;
+    }
+
+    .options input:checked + label {
+        background: #4a90e2;
+        color: #fff;
+        border-color: #4a90e2;
+    }
+
+    .actions {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background: #357ab8;
+    }
+
+    .icon {
+        margin-right: 10px;
+        font-size: 1.2rem;
+        color: #4a90e2;
+    }
+    
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>اختبار برنامج Microsoft Word</h1>
+        <form id="quizForm">
+            <!-- السؤال الأول -->
+            <div class="question" id="q1">
+                <h3><span class="icon">📂</span>1.لتغيير المستند وتحويلة الى pdf بخطوة واحدة نختار الامر:</h3>
+                <div class="options">
+                    <input type="radio" id="q1a1" name="q1" value="0">
+                    <label for="q1a1">حفظ </label>
+                    <input type="radio" id="q1a2" name="q1" value="1">
+                    <label for="q1a2">خيارات</label>
+                    <input type="radio" id="q1a3" name="q1" value="2">
+                    <label for="q1a3">تصدير</label>
+                    <input type="radio" id="q1a4" name="q1" value="3">
+                    <label for="q1a4">مشاركة</label>
+                </div>
+            </div>
+            <!-- السؤال الثاني -->
+            <div class="question" id="q2">
+                <h3><span class="icon">🖨</span>2.الوظيفة الرئيسية لخيار" معلومات " هو:</h3>
+                <div class="options">
+                    <input type="radio" id="q2a1" name="q2" value="0">
+                    <label for="q2a1">فتح مستند جديد</label>
+                    <input type="radio" id="q2a2" name="q2" value="1">
+                    <label for="q2a2">عرض تفاصيل المستند وتوفير الحماية له</label>
+                    <input type="radio" id="q2a3" name="q2" value="2">
+                    <label for="q2a3">طباعة المستند</label>
+                    <input type="radio" id="q2a4" name="q2" value="3">
+                    <label for="q2a4">تغيير تنسيق المستند</label>
+                </div>
+            </div>
+            <!-- السؤال الثالث -->
+            <div class="question" id="q3">
+                <h3><span class="icon">📄</span>3.أي من الخيارات التالية لا يوجد ضمن تبويب الشريط الرئيسي؟</h3>
+                <div class="options">
+                    <input type="radio" id="q3a1" name="q3" value="0">
+                    <label for="q3a1">تغيير حجم الخط</label>
+                    <input type="radio" id="q3a2" name="q3" value="1">
+                    <label for="q3a2">ادرج جدول</label>
+                    <input type="radio" id="q3a3" name="q3" value="2">
+                    <label for="q3a3">نسخ النص</label>
+                    <input type="radio" id="q3a4" name="q3" value="3">
+                    <label for="q3a4">استبدال</label>
+                </div>
+            </div>
+            <!-- السؤال الرابع -->
+            <div class="question" id="q4">
+                <h3><span class="icon">📝</span>4. أي من الخيارات التالية يمكن استخدامه لتغيير محاذاة النص في تبويب الشريط الرئيسي؟</h3>
+                <div class="options">
+                    <input type="radio" id="q4a1" name="q4" value="0">
+                    <label for="q4a1">تغيير الهوامش</label>
+                    <input type="radio" id="q4a2" name="q4" value="1">
+                    <label for="q4a2">خيارات الفقرة</label>
+                    <input type="radio" id="q4a3" name="q4" value="2">
+                    <label for="q4a3">حفظ المستند</label>
+                    <input type="radio" id="q4a4" name="q4" value="3">
+                    <label for="q4a4">خيارات الخط</label>
+                </div>
+            </div>
+            
+            <!-- السؤال الخامس -->
+            <div class="question" id="q5">
+                <h3><span class="icon">📝</span>5.ما وظيفة زر "مسح التنسيق" في تبويب الشريط الرئيسي؟</h3>
+                <div class="options">
+                    <input type="radio" id="q5a1" name="q5" value="0">
+                    <label for="q5a1">حذف النص</label>
+                    <input type="radio" id="q5a2" name="q5" value="1">
+                    <label for="q5a2">إزالة جميع التنسيقات النص</label>
+                    <input type="radio" id="q5a3" name="q5" value="2">
+                    <label for="q5a3">مسح النص المكرر</label>
+                    <input type="radio" id="q5a4" name="q5" value="3">
+                    <label for="q5a4">لصق النص بدون تنسيق</label>
+                </div>
+            </div>
+            
+            <!-- السؤال السادس -->
+            <div class="question" id="q6">
+                <h3><span class="icon">📝</span>6. لإضافة تعداد نقطني للنصوص، نستخدم ايقونة موجودة في:</h3>
+                <div class="options">
+                    <input type="radio" id="q6a1" name="q6" value="0">
+                    <label for="q6a1">قسم الأنماط</label>
+                    <input type="radio" id="q6a2" name="q6" value="1">
+                    <label for="q6a2">قسم الفقرة</label>
+                    <input type="radio" id="q6a3" name="q6" value="2">
+                    <label for="q6a3">قسم الإدراج</label>
+                    <input type="radio" id="q6a4" name="q6" value="3">
+                    <label for="q6a4">قسم المراجع</label>
+                </div>
+            </div>
+            
+            <!-- السؤال السابع -->
+            <div class="question" id="q7">
+                <h3><span class="icon">📝</span>7. ما هي الطريقة الصحيحة لإدراج "علامة مائية" مخصصة تحتوي على نص في مستند Word؟</h3>
+                <div class="options">
+                    <input type="radio" id="q7a1" name="q7" value="0">
+                    <label for="q7a1">إدراج > علامة مائية > نص مخصص</label>
+                    <input type="radio" id="q7a2" name="q7" value="1">
+                    <label for="q7a2">إدراج > رأس وتذييل > علامة مائية</label>
+                    <input type="radio" id="q7a3" name="q7" value="2">
+                    <label for="q7a3">إدراج > صور > صورة مخصصة</label>
+                    <input type="radio" id="q7a4" name="q7" value="3">
+                    <label for="q7a4">إدراج > نص > علامة مائية</label>
+                </div>
+            </div>
+            
+            <!-- السؤال الثامن -->
+            <div class="question" id="q8">
+                <h3><span class="icon">📝</span>8.كيف يمكنك إدراج نص ذو تأثيرات خاصة مثل الظل أو الإضاءة؟</h3>
+                <div class="options">
+                    <input type="radio" id="q8a1" name="q8" value="0">
+                    <label for="q8a1">باستخدام خيار "تأثيرات النص" في تبويب "إدراج</label>
+                    <input type="radio" id="q8a2" name="q8" value="1">
+                    <label for="q8a2">باستخدام خيار "أنماط النص" في تبويب "إدراج</label>
+                    <input type="radio" id="q8a3" name="q8" value="2">
+                    <label for="q8a3">باستخدام خيار "مخطط" في تبويب "إدراج</label>
+                    <input type="radio" id="q8a4" name="q8" value="3">
+                    <label for="q8a4">باستخدام خيار "تنسيق" في تبويب "الصفحة الرئيسية</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال التاسع -->
+            <div class="question" id="q9">
+                <h3><span class="icon">📝</span>9.عند إضافة صورة إلى مستند وورد عبر خيار "إدراج صورة"، هل يمكن التحكم في موضع الصورة داخل النص؟</h3>
+                <div class="options">
+                    <input type="radio" id="q9a1" name="q9" value="0">
+                    <label for="q9a1">نعم، يمكنك تحريك الصورة إلى أي مكان في النص بسهولة</label>
+                    <input type="radio" id="q9a2" name="q9" value="1">
+                    <label for="q9a2">لا، الصورة تبقى في مكانها بشكل ثابت ولا يمكن تعديل موضعها</label>
+                    <input type="radio" id="q9a3" name="q9" value="2">
+                    <label for="q9a3">يمكن التحكم في صورة واحدة فقط في النص</label>
+                    <input type="radio" id="q9a4" name="q9" value="3">
+                    <label for="q9a4">نعم، لكن فقط إذا كانت الصورة في جزء منفصل من المستند</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال العاشر -->
+            <div class="question" id="q10">
+                <h3><span class="icon">📝</span>10. أفضل طريقة لإنشاء عنوان في مستند هي:</h3>
+                <div class="options">
+                    <input type="radio" id="q10a1" name="q10" value="0">
+                    <label for="q10a1">قم بتطبيق حجم خط عليه أكبر من النص الأساسي</label>
+                    <input type="radio" id="q10a2" name="q10" value="1">
+                    <label for="q10a2">أصف تنسيقا غامقا بالنقر فوق الزر غامق على شريط أدوات التنسيق</label>
+                    <input type="radio" id="q10a3" name="q10" value="2">
+                    <label for="q10a3">تطبيق نمط العنوان.</label>
+                    <input type="radio" id="q10a4" name="q10" value="3">
+                    <label for="q10a4">لا شيء مما سبق</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال11 -->
+            <div class="question" id="q11">
+                <h3><span class="icon">📝</span>11.	ما هو الفرق بين صفحه فارغه وفاصل صفحات؟</h3>
+                <div class="options">
+                    <input type="radio" id="q11a1" name="q11" value="0">
+                    <label for="q11a1">لا يوجد فرق</label>
+                    <input type="radio" id="q11a2" name="q11" value="1">
+                    <label for="q11a2">الصفحة الفارغة وفاصل الصفحات تفتح صفحه فارغه في أي مكان داخل المستند</label>
+                    <input type="radio" id="q11a3" name="q11" value="2">
+                    <label for="q11a3">الصفحة الفارغة تفتح صفحه بعد الصفحة الحالية وفاصل الصفحات يقوم بأنهاء الصفحة والانتقال للتاليه</label>
+                    <input type="radio" id="q11a4" name="q11" value="3">
+                    <label for="q11a4">الصفحة الفارغة تفتح صفحه بعد الصفحة الحالية وفاصل الصفحات يقوم فقط بالانتقال للصفحة التاليه</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال12 -->
+            <div class="question" id="q12">
+                <h3><span class="icon">📝</span>12.ما التأثير الذي يمكن تطبيقه باستخدام أداة "حدود"؟</h3>
+                <div class="options">
+                    <input type="radio" id="q12a1" name="q12" value="0">
+                    <label for="q12a1">وضع لون للخلفية</label>
+                    <input type="radio" id="q12a2" name="q12" value="1">
+                    <label for="q12a2">إضافة حدود مزخرف أو خطي حول الفقرة</label>
+                    <input type="radio" id="q12a3" name="q12" value="2">
+                    <label for="q12a3">إدراج علامة مائية</label>
+                    <input type="radio" id="q12a4" name="q12" value="3">
+                    <label for="q12a4">إضافة حدود للصفحة</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال13 -->
+            <div class="question" id="q13">
+                <h3><span class="icon">📝</span>13.كيف يمكنك الجمع بين أدوات "تصميم" و"ملف" لتحسين الامن الملف؟</h3>
+                <div class="options">
+                    <input type="radio" id="q13a1" name="q13" value="0">
+                    <label for="q13a1">لون للصفحة ووضع علامة كنهائي</label>
+                    <input type="radio" id="q13a2" name="q13" value="1">
+                    <label for="q13a2">العلامة المائية وحفظ للقراءة فقط</label>
+                    <input type="radio" id="q13a3" name="q13" value="2">
+                    <label for="q13a3">حفظ النسق المستخدم وتشفير</label>
+                    <input type="radio" id="q13a4" name="q13" value="3">
+                    <label for="q13a4">تعديل الألوان وحفظ باسم</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال14 -->
+            <div class="question" id="q14">
+                <h3><span class="icon">📝</span>14.ما الفرق الأساسي بين "أنماط الخطوط" و"أنماط الفقرات"؟</h3>
+                <div class="options">
+                    <input type="radio" id="q14a1" name="q14" value="0">
+                    <label for="q14a1">أنماط الخطوط تتحكم في النصوص فقط، وأنماط الفقرات تتحكم في التنسيق العام للفقرة</label>
+                    <input type="radio" id="q14a2" name="q14" value="1">
+                    <label for="q14a2">لا يوجد فرق بينهما</label>
+                    <input type="radio" id="q14a3" name="q14" value="2">
+                    <label for="q14a3">أنماط الخطوط تستخدم في العناوين فقط</label>
+                    <input type="radio" id="q14a4" name="q14" value="3">
+                    <label for="q14a4">أنماط الفقرات تغير حجم الصفحة</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال15 -->
+            <div class="question" id="q15">
+                <h3><span class="icon">📝</span>15. أي خيار من تبويب عرض يُستخدم للبحث داخل المستند؟</h3>
+                <div class="options">
+                    <input type="radio" id="q15a1" name="q15" value="0">
+                    <label for="q15a1">جزء التنقل</label>
+                    <input type="radio" id="q15a2" name="q15" value="1">
+                    <label for="q15a2">وضع القراءة</label>
+                    <input type="radio" id="q15a3" name="q15" value="2">
+                    <label for="q15a3">مسطرة</label>
+                    <input type="radio" id="q15a4" name="q15" value="3">
+                    <label for="q15a4">مخطط تفصيلي</label>
+                </div>
+            </div> 
+            <!-- السؤال ال16 -->
+            <div class="question" id="q16">
+                <h3><span class="icon">📝</span>16.ما هو الخيار الذي يُستخدم لتقسيم نافذة العرض للعمل على جزأين مختلفين من المستند؟</h3>
+                <div class="options">
+                    <input type="radio" id="q16a1" name="q16" value="0">
+                    <label for="q16a1">تقسيم</label>
+                    <input type="radio" id="q16a2" name="q16" value="1">
+                    <label for="q16a2">شبكة</label>
+                    <input type="radio" id="q16a3" name="q16" value="2">
+                    <label for="q16a3">تكبير</label>
+                    <input type="radio" id="q16a4" name="q16" value="3">
+                    <label for="q16a4">وضع القراءة</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال17 -->
+            <div class="question" id="q17">
+                <h3><span class="icon">📝</span>17.أي من الخيارات التالية يساعدك في تحديد العناوين وتنظيم المستند في بنية واضحة؟</h3>
+                <div class="options">
+                    <input type="radio" id="q17a1" name="q17" value="0">
+                    <label for="q17a1">المخطط التفصيلي</label>
+                    <input type="radio" id="q17a2" name="q17" value="1">
+                    <label for="q17a2">التكبير</label>
+                    <input type="radio" id="q17a3" name="q17" value="2">
+                    <label for="q17a3">نافذة جديدة</label>
+                    <input type="radio" id="q17a4" name="q17" value="3">
+                    <label for="q17a4">جزء التنقل</label>
+                </div>
+            </div> 
+            <!-- السؤال ال18 -->
+            <div class="question" id="q18">
+                <h3><span class="icon">📝</span>18.أي خيار يُستخدم لتحديد المسافة بين النص وحدود الصفحة؟</h3>
+                <div class="options">
+                    <input type="radio" id="q18a1" name="q18" value="0">
+                    <label for="q18a1">الأعمدة</label>
+                    <input type="radio" id="q18a2" name="q18" value="1">
+                    <label for="q18a2">الهوامش</label>
+                    <input type="radio" id="q18a3" name="q18" value="2">
+                    <label for="q18a3">الاتجاه</label>
+                    <input type="radio" id="q18a4" name="q18" value="3">
+                    <label for="q18a4">الفواصل</label>
+                </div>
+            </div> 
+            <!-- السؤال ال19 -->
+            <div class="question" id="q19">
+                <h3><span class="icon">📝</span>19.ما هو الخيار الذي يُستخدم لتفعيل الفصل التلقائي للكلمات الطويلة بين السطور؟</h3>
+                <div class="options">
+                    <input type="radio" id="q19a1" name="q19" value="0">
+                    <label for="q19a1">الأعمدة</label>
+                    <input type="radio" id="q19a2" name="q19" value="1">
+                    <label for="q19a2">الفواصل</label>
+                    <input type="radio" id="q19a3" name="q19" value="2">
+                    <label for="q19a3">الواصلات</label>
+                    <input type="radio" id="q19a4" name="q19" value="3">
+                    <label for="q19a4">الترتيب</label>
+                </div>
+            </div> 
+            <!-- السؤال ال20 -->
+            <div class="question" id="q20">
+                <h3><span class="icon">📝</span>20.ما الفائدة من خيار "المسافة البادئة" في قسم الفقرة؟</h3>
+                <div class="options">
+                    <input type="radio" id="q20a1" name="q20" value="0">
+                    <label for="q20a1">تعديل اتجاه النص</label>
+                    <input type="radio" id="q20a2" name="q20" value="1">
+                    <label for="q20a2">التحكم في المسافة بين النص وحواف الصفحة</label>
+                    <input type="radio" id="q20a3" name="q20" value="2">
+                    <label for="q20a3">ضبط المسافة بين بداية النص والهامش</label>
+                    <input type="radio" id="q20a4" name="q20" value="3">
+                    <label for="q20a4">إضافة أعمدة</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال21 -->
+            <div class="question" id="q21">
+                <h3><span class="icon">📝</span>21.ما الخيار في تبويب "عرض" الذي يسمح بتحريك الكائنات (مثل الصور أو الأشكال) إلى الأمام بحيث تظهر فوق النص أو الكائنات الأخرى في المستند؟</h3>
+                <div class="options">
+                    <input type="radio" id="q21a1" name="q21" value="0">
+                    <label for="q21a1">إظهار/إخفاء الشبكة</label>
+                    <input type="radio" id="q21a2" name="q21" value="1">
+                    <label for="q21a2">ترتيب</label>
+                    <input type="radio" id="q21a3" name="q21" value="2">
+                    <label for="q21a3">التقسيم</label>
+                    <input type="radio" id="q21a4" name="q21" value="3">
+                    <label for="q21a4">مخطط تفصيلي</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال22 -->
+            <div class="question" id="q22">
+                <h3><span class="icon">📝</span>22.تعرف وحدات المايكرو في تبويب عرض على انها……؟</h3>
+                <div class="options">
+                    <input type="radio" id="q22a1" name="q22" value="0">
+                    <label for="q22a1">يقوم بعملية تسجيل خطوات العمل ونسخ النتيجة النهائية</label>
+                    <input type="radio" id="q22a2" name="q22" value="1">
+                    <label for="q22a2">يقوم بعملية نسخ ولصق</label>
+                    <input type="radio" id="q22a3" name="q22" value="2">
+                    <label for="q22a3">يقوم بتسجيل خطوات العمل فقط</label>
+                    <input type="radio" id="q22a4" name="q22" value="3">
+                    <label for="q22a4">يقوم بإعادة تخطيط المستند</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال23 -->
+            <div class="question" id="q23">
+                <h3><span class="icon">📝</span>23.كيف يمكن تغيير تنسيق الحواشي السفلية لتصبح بالأرقام الرومانية؟</h3>
+                <div class="options">
+                    <input type="radio" id="q23a1" name="q23" value="0">
+                    <label for="q23a1">تعديل خيار "إدارة المصادر</label>
+                    <input type="radio" id="q23a2" name="q23" value="1">
+                    <label for="q23a2">استخدام خيار "تنسيق الحواشي السفلية" في نافذة الحواشي</label>
+                    <input type="radio" id="q23a3" name="q23" value="2">
+                    <label for="q23a3">إعادة إدراج الحواشي يدويًا</label>
+                    <input type="radio" id="q23a4" name="q23" value="3">
+                    <label for="q23a4">تغيير إعدادات الصفحة</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال24 -->
+            <div class="question" id="q24">
+                <h3><span class="icon">📝</span>24.عند إنشاء قائمة مراجع (Bibliography) في المستند، ما المطلوب قبل ذلك؟</h3>
+                <div class="options">
+                    <input type="radio" id="q24a1" name="q24" value="0">
+                    <label for="q24a1">إدراج الحواشي السفلية فقط</label>
+                    <input type="radio" id="q24a2" name="q24" value="1">
+                    <label for="q24a2">إضافة اقتباسات (Citations) داخل المستند</label>
+                    <input type="radio" id="q24a3" name="q24" value="2">
+                    <label for="q24a3">تنسيق العناوين باستخدام الأنماط (Styles)</label>
+                    <input type="radio" id="q24a4" name="q24" value="3">
+                    <label for="q24a4">تحديث جدول المحتويات</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال25 -->
+            <div class="question" id="q25">
+                <h3><span class="icon">📝</span>25.ما دور فهرس الأشكال (Table of Figures) في تبويب المراجع؟</h3>
+                <div class="options">
+                    <input type="radio" id="q25a1" name="q25" value="0">
+                    <label for="q25a1">إنشاء قائمة تلقائية للصور والجداول المستندة إلى النصوص التوضيحية (Captions)</label>
+                    <input type="radio" id="q25a2" name="q25" value="1">
+                    <label for="q25a2">إدراج نصوص توضيحية أسفل الصور فقط</label>
+                    <input type="radio" id="q25a3" name="q25" value="2">
+                    <label for="q25a3">ربط الصور والجداول بفهرس المحتويات</label>
+                    <input type="radio" id="q25a4" name="q25" value="3">
+                    <label for="q25a4">حذف جميع الجداول الغير ضرورية في المستند</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال26 -->
+            <div class="question" id="q26">
+                <h3><span class="icon">📝</span>26.ما وظيفة الاسناد الترافقي؟</h3>
+                <div class="options">
+                    <input type="radio" id="q26a1" name="q26" value="0">
+                    <label for="q26a1">أدراج مصادر</label>
+                    <input type="radio" id="q26a2" name="q26" value="1">
+                    <label for="q26a2">انشاء تسميات توضيحية للأشكال</label>
+                    <input type="radio" id="q26a3" name="q26" value="2">
+                    <label for="q26a3">انشاء ارتباط تشعبي لوصف التسمية التوضيحية</label>
+                    <input type="radio" id="q26a4" name="q26" value="3">
+                    <label for="q26a4">لا شيء مما ذكر</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال27 -->
+            <div class="question" id="q27">
+                <h3><span class="icon">📝</span>27.كيف يمكن إضافة مراجع متعددة لمصدر واحد في نفس المستند باستخدام "إدارة المصادر"؟</h3>
+                <div class="options">
+                    <input type="radio" id="q27a1" name="q27" value="0">
+                    <label for="q27a1">يتم إضافة نفس المصدر في كل مرة يشار إليها في المستند</label>
+                    <input type="radio" id="q27a2" name="q27" value="1">
+                    <label for="q27a2">يتم إضافة المصدر فقط مرة واحدة، ثم يتم استخدامه في أماكن متعددة</label>
+                    <input type="radio" id="q27a3" name="q27" value="2">
+                    <label for="q27a3">يجب إدراج كل مرجع يدويًا عند الإشارة إلى المصدر في المستند</label>
+                    <input type="radio" id="q27a4" name="q27" value="3">
+                    <label for="q27a4">لا يمكن إضافة مراجع متعددة لنفس المصدر في مستند واحد</label>
+                </div>
+            </div>  
+            
+            <!-- السؤال ال28 -->
+            <div class="question" id="q28">
+                <h3><span class="icon">📝</span>28.من أين يمكن اعداد المراسلات خطوة بخطوة؟</h3>
+                <div class="options">
+                    <input type="radio" id="q28a1" name="q28" value="0">
+                    <label for="q28a1">بدء المراسلات</label>
+                    <input type="radio" id="q28a2" name="q28" value="1">
+                    <label for="q28a2">معالج دمج المراسلات</label>
+                    <input type="radio" id="q28a3" name="q28" value="2">
+                    <label for="q28a3">تحديد المستلمين</label>
+                    <input type="radio" id="q28a4" name="q28" value="3">
+                    <label for="q28a4">القواعد</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال29 -->
+            <div class="question" id="q29">
+                <h3><span class="icon">📝</span>29.عند إنشاء رسالة تحتوي على بيانات متغيرة لكل مستلم، ما الأداة التي تُستخدم لإضافة نصوص مخصصة مثل الأسماء؟</h3>
+                <div class="options">
+                    <input type="radio" id="q29a1" name="q29" value="0">
+                    <label for="q29a1">إعداد المغلفات</label>
+                    <input type="radio" id="q29a2" name="q29" value="1">
+                    <label for="q29a2">إدراج حقل دمج</label>
+                    <input type="radio" id="q29a3" name="q29" value="2">
+                    <label for="q29a3">قواعد</label>
+                    <input type="radio" id="q29a4" name="q29" value="3">
+                    <label for="q29a4">تحديد المستلمين</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال30 -->
+            <div class="question" id="q30">
+                <h3><span class="icon">📝</span>30.أثناء دمج المراسلات، إذا أردت إرسال رسائل مخصصة بناءً على شرط معين (مثل تغيير النص إذا كان العميل "VIP")، ما الأداة التي يجب استخدامها؟</h3>
+                <div class="options">
+                    <input type="radio" id="q30a1" name="q30" value="0">
+                    <label for="q30a1">تحديد المستلمين</label>
+                    <input type="radio" id="q30a2" name="q30" value="1">
+                    <label for="q30a2">قواعد</label>
+                    <input type="radio" id="q30a3" name="q30" value="2">
+                    <label for="q30a3">إدراج حقل دمج</label>
+                    <input type="radio" id="q30a4" name="q30" value="3">
+                    <label for="q30a4">معاينة النتائج</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال31 -->
+            <div class="question" id="q31">
+                <h3><span class="icon">📝</span>31.هل يوجد فرق بين معاينة النتائج وإنهاء الدمج؟</h3>
+                <div class="options">
+                    <input type="radio" id="q31a1" name="q31" value="0">
+                    <label for="q31a1">لا، لا يوجد</label>
+                    <input type="radio" id="q31a2" name="q31" value="1">
+                    <label for="q31a2">نعم، فالمعاينة تظهر اسما واحد لمعاينة الشكل النهائي، أما الإنهاء يكرر التصميم حسب كل الأسماء المدرجة في الجدول</label>
+                    <input type="radio" id="q31a3" name="q31" value="2">
+                    <label for="q31a3">نعم، فالمعاينة هي محاكاة لكل الأسماء تكون في نفس المستند، أما الإنهاء فهو أما طباعة التصميم لكل الأسماء أو حفظه كمستند</label>
+                    <input type="radio" id="q31a4" name="q31" value="3">
+                    <label for="q31a4">جميع ما سبق</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال32 -->
+            <div class="question" id="q32">
+                <h3><span class="icon">📝</span>32.ما هو الهدف من استخدام خيار "حماية المستند" في تبويب "مراجعة"؟</h3>
+                <div class="options">
+                    <input type="radio" id="q32a1" name="q32" value="0">
+                    <label for="q32a1">حماية النص من الأخطاء الإملائية</label>
+                    <input type="radio" id="q32a2" name="q32" value="1">
+                    <label for="q32a2">منع الأشخاص من تعديل المستند</label>
+                    <input type="radio" id="q32a3" name="q32" value="2">
+                    <label for="q32a3">تغيير تصميم المستند</label>
+                    <input type="radio" id="q32a4" name="q32" value="3">
+                    <label for="q32a4">إضافة النصوص إلى المستند</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال33 -->
+            <div class="question" id="q33">
+                <h3><span class="icon">📝</span>33.أي من الخيارات التالية يتيح لك تحديد اللغة المستخدمة في المستند؟</h3>
+                <div class="options">
+                    <input type="radio" id="q33a1" name="q33" value="0">
+                    <label for="q33a1">مراجعة</label>
+                    <input type="radio" id="q33a2" name="q33" value="1">
+                    <label for="q33a2">إدراج</label>
+                    <input type="radio" id="q33a3" name="q33" value="2">
+                    <label for="q33a3">التخطيط</label>
+                    <input type="radio" id="q33a4" name="q33" value="3">
+                    <label for="q33a4">الشريط الرئيسي</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال34 -->
+            <div class="question" id="q34">
+                <h3><span class="icon">📝</span>34.ماذا يحدث عندما تقوم بتفعيل خيار "تعقب التغييرات"؟</h3>
+                <div class="options">
+                    <input type="radio" id="q34a1" name="q34" value="0">
+                    <label for="q34a1">يتم حذف النصوص القديمة</label>
+                    <input type="radio" id="q34a2" name="q34" value="1">
+                    <label for="q34a2">يتم تمكين التعديلات والمتابعات التلقائية للنصوص</label>
+                    <input type="radio" id="q34a3" name="q34" value="2">
+                    <label for="q34a3">يتم حفظ المستند بشكل تلقائي</label>
+                    <input type="radio" id="q34a4" name="q34" value="3">
+                    <label for="q34a4">يتم إخفاء التغييرات في النص</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال35 -->
+            <div class="question" id="q35">
+                <h3><span class="icon">📝</span>35.ماذا يفعل خيار "إيقاف تتبع التغييرات" في تبويب "مراجعة"؟</h3>
+                <div class="options">
+                    <input type="radio" id="q35a1" name="q35" value="0">
+                    <label for="q35a1">يعرض جميع التغييرات في المستند</label>
+                    <input type="radio" id="q35a2" name="q35" value="1">
+                    <label for="q35a2">يعطل خاصية تتبع التغييرات ويوقف تسجيل التعديلات الجديدة</label>
+                    <input type="radio" id="q35a3" name="q35" value="2">
+                    <label for="q35a3">يلغى جميع التعديلات التي تم إجراؤها</label>
+                    <input type="radio" id="q35a4" name="q35" value="3">
+                    <label for="q35a4">ينقلك إلى نسخة قديمة من المستند</label>
+                </div>
+            </div> 
+            
+            <!-- السؤال ال36 -->
+            <div class="question" id="q36">
+                <h3><span class="icon">📝</span>36.أي من الخيارات التالية لا يمكن تعديله في إعدادات "تعقب التغييرات" في Word 2021؟</h3>
+                <div class="options">
+                    <input type="radio" id="q36a1" name="q36" value="0">
+                    <label for="q36a1">تغيير لون النصوص المضافة</label>
+                    <input type="radio" id="q36a2" name="q36" value="1">
+                    <label for="q36a2">تغيير لون النصوص المحذوفة</label>
+                    <input type="radio" id="q36a3" name="q36" value="2">
+                    <label for="q36a3">تغيير مكان التعليقات داخل المستند</label>
+                    <input type="radio" id="q36a4" name="q36" value="3">
+                    <label for="q36a4">تغيير طريقة عرض الحقول</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال37 -->
+            <div class="question" id="q37">
+                <h3><span class="icon">📝</span>37.أي من الخيارات التالية يسمح لك بالبحث عن موضوعات الدعم أو الإجابة على الأسئلة في Word؟</h3>
+                <div class="options">
+                    <input type="radio" id="q37a1" name="q37" value="0">
+                    <label for="q37a1">خيار "مساعد"</label>
+                    <input type="radio" id="q37a2" name="q37" value="1">
+                    <label for="q37a2">خيار "دعم"</label>
+                    <input type="radio" id="q37a3" name="q37" value="2">
+                    <label for="q37a3">خيار "التعليمات"</label>
+                    <input type="radio" id="q37a4" name="q37" value="3">
+                    <label for="q37a4">خيار "مراجعة"</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال38 -->
+            <div class="question" id="q38">
+                <h3><span class="icon">📝</span>38.كيف يمكن دمج ملفين وورد مع بعض؟</h3>
+                <div class="options">
+                    <input type="radio" id="q38a1" name="q38" value="0">
+                    <label for="q38a1">تبويب مراجعه – مقارنه – دمج </label>
+                    <input type="radio" id="q38a2" name="q38" value="1">
+                    <label for="q38a2">تبويب ادراج – الأجزاء السريعة- دمج </label>
+                    <input type="radio" id="q38a3" name="q38" value="2">
+                    <label for="q38a3">تبويب تخطيط – جزء التحديد</label>
+                    <input type="radio" id="q38a4" name="q38" value="3">
+                    <label for="q38a4">تبويب مراجع – جدول المحتويات</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال39 -->
+            <div class="question" id="q39">
+                <h3><span class="icon">📝</span>39.ما هي الخطوة الصحيحة بعد اختيار "تحديد المستلمين" لإكمال دمج المراسلات؟</h3>
+                <div class="options">
+                    <input type="radio" id="q39a1" name="q39" value="0">
+                    <label for="q39a1">إدراج حقول الدمج</label>
+                    <input type="radio" id="q39a2" name="q39" value="1">
+                    <label for="q39a2">إعداد الملصقات</label>
+                    <input type="radio" id="q39a3" name="q39" value="2">
+                    <label for="q39a3">قواعد</label>
+                    <input type="radio" id="q39a4" name="q39" value="3">
+                    <label for="q39a4">إنهاء ودمج</label>
+                </div>
+            </div>
+            
+            <!-- السؤال ال40 -->
+            <div class="question" id="q40">
+                <h3><span class="icon">📝</span>40.هل من الممكن الوصول الى قائمة المعلومات بأكثر من طريقة؟</h3>
+                <div class="options">
+                    <input type="radio" id="q40a1" name="q40" value="0">
+                    <label for="q40a1">لا، طريقة واحدة من تبويب ملف</label>
+                    <input type="radio" id="q40a2" name="q40" value="1">
+                    <label for="q40a2">نعم، من تبويبا ملف وتخطيط </label>
+                    <input type="radio" id="q40a3" name="q40" value="2">
+                    <label for="q40a3">نعم، من تبويبا ملف وعرض</label>
+                    <input type="radio" id="q40a4" name="q40" value="3">
+                    <label for="q40a4">جميع ما ذكر صحيح</label>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- زر الإرسال -->
+            <div class="actions">
+                <button type="button" class="btn" onclick="submitQuiz()">إرسال</button>
+            </div>
+        </form>
+        <div class="summary" id="summary" style="display: none;">
+            <h2>شكراً لإتمام الاختبار!</h2>
+            <p id="score"></p>
+            <!-- زر تحويل إلى الاختبار العملي -->
+            <button class="btn" onclick="window.location.href='index4.html'">الانتقال للاختبار العملي</button>
+        </div>
+    </div>
+    <script>
+        const correctAnswers = [2,1,1,1,1,1,0,0,0,2,2,1,2,0,0,0,0,1,2,2,1,0,1,1,0,2,1,1,1,1,2,1,0,1,1,2,2,0,0,2];
+
+        function submitQuiz() {
+            const form = document.getElementById("quizForm");
+            const summary = document.getElementById("summary");
+            const scoreText = document.getElementById("score");
+            let score = 0;
+            let allAnswered = true;
+
+            // تفعيل التحريك للحدود لكل سؤال
+            for (let i = 0; i < correctAnswers.length; i++) {
+                const question = form[`q${i + 1}`];
+                const questionDiv = document.getElementById(`q${i + 1}`);
+                questionDiv.classList.add('animate-border');
+
+                // إضافة الحركة الثلاثية الأبعاد عند الانتقال للسؤال التالي
+                setTimeout(() => {
+                    questionDiv.classList.add('animate-3d');
+                    setTimeout(() => {
+                        questionDiv.classList.remove('animate-3d');
+                    }, 600);
+                }, 1000);
+
+                // إزالة تأثير التحريك بعد انتهاء الأنيميشن
+                setTimeout(() => {
+                    questionDiv.classList.remove('animate-border');
+                }, 1000);
+                
+                if (question && question.value !== undefined && parseInt(question.value) === correctAnswers[i]) {
+                      score++;
+                }
+
+                if (!question || question.value === undefined || question.value === "") { 
+                    allAnswered = false; 
+                }
+
+
+                /*if (question && question.value == correctAnswers[i]) {
+                    score++;
+                }*/
+            }
+
+           if (allAnswered) { 
+             form.style.display = "none"; 
+             summary.style.display = "block"; 
+             scoreText.textContent = `لقد حصلت على ${score} من ${correctAnswers.length}`; 
+            } else { 
+            alert("يرجى الإجابة على جميع الأسئلة قبل تقديم الاختبار."); }
+        }
+    </script>
+</body>
+</html>

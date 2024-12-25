@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار Microsoft Word</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+           /* background: linear-gradient(135deg, #ffffff, #a0c4ff);*/
+           background: linear-gradient(135deg, #241b57, #0d2452);
+
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .welcome-page {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        .welcome-text h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .welcome-text p {
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-style: italic;
+        }
+
+        .word-image img {
+            width: 250px;
+            height: auto;
+        }
+
+        .login-button button {
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            color: #2d1277;
+            font-size: 1.5rem;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .login-button button:hover {
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .fade-out {
+            animation: fadeOut 1s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-page">
+        <div class="logo-container">
+            <img src="index2.png" alt="شعار المؤسسة" class="logo">
+            <img src="index1.png" alt="شعار القسم" class="logo">
+        </div>
+
+        <div class="welcome-text">
+            <h1>مرحبًا بكم في اختبار Microsoft Word</h1>
+            <p>يرجى تسجيل الدخول للبدء بالاختبار</p>
+        </div>
+
+        <div class="word-image">
+            <img src="index4.gif" alt="Microsoft Word">
+        </div>
+
+        <div class="login-button">
+            <button onclick="navigateToLogin()">تسجيل الدخول</button>
+        </div>
+    </div>
+
+    <script>
+        function navigateToLogin() {
+            document.querySelector('.welcome-page').classList.add('fade-out'); // إضافة تأثير الخروج
+            setTimeout(function() {
+                window.location.href="index2.html"; // الانتقال إلى صفحة تسجيل الدخول بعد 1 ثانية
+            }, 1000); // التأخير يعادل مدة الأنيميشن
+        }
+    </script>
+</body>
+</html>
